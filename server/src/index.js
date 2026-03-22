@@ -3,6 +3,7 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const path = require('path');
 
+// Supports placing .env in both root server and src natively
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const app = express();
@@ -73,5 +74,5 @@ app.post('/api/summarize', async (req, res) => {
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-  console.log(`Server is running correctly on port ${PORT} [API Key verification triggered]`);
+  console.log(`Server is running correctly on port ${PORT} [API Key Initialized]`);
 });
