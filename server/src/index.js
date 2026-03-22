@@ -3,7 +3,6 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const path = require('path');
 
-// Supports placing .env in both root server and src natively
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const app = express();
