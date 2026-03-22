@@ -3,8 +3,6 @@ const cors = require('cors');
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const path = require('path');
 
-// Dynamically check both the server/ folder and server/src/ folder for the .env
-require('dotenv').config({ path: path.join(__dirname, '../.env') });
 require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const app = express();
@@ -48,7 +46,7 @@ app.post('/api/summarize', async (req, res) => {
 
   try {
     const model = ai.getGenerativeModel({
-      model: "gemini-1.5-flash",
+      model: "gemini-2.5-flash",
       systemInstruction: SYSTEM_PROMPT,
       generationConfig: {
         temperature: 0.1,
